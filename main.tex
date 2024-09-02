@@ -4,62 +4,24 @@
 
 % 图片存放路径，在这些文件夹里的图片可以直接使用图片文件名调用
 \graphicspath{{figures/}{pictures/}}
-
-%%=============================================
-% 开始写论文
-% ！！注意本文仅作为排版格式示例，并不作为毕业论文规范
 \begin{document}
 
-% 开始写前言部分
 \frontmatter
-
-% 封面信息填写
 \input{front/coverinformation}
-
-% 生成封面、中英文摘要
-% \makecover
-
-% 物理量名称表，若采用标准符号则不需要此表
-% \input{front/denotation}
-
-% 中文目录
 \tableofcontents
 
-% 开始写正文
 \mainmatter
-
-% 第1章
 \input{body/chapter01}
-
-% 第2章
 \input{body/chapter02}
-
-% 第3章
 \input{body/chapter03}
-
-% 第4章
 \input{body/chapter04}
-
-% 第5章
 \input{body/chapter05}
-
-% 第6章
 \input{body/chapter06}
+\input{body/chapter07}
 
-% 开始写正文之后的部分
 \backmatter
-
-% 结论
-% \input{back/conclusion}
-
-% 参考文献
 \bibliographystyle{hitszthesis}
 \bibliography{reference}
 
 % 结束文档撰写
 \end{document}
-%%=============================================
-
-% Local Variables:
-% TeX-engine: xetex
-% End:
