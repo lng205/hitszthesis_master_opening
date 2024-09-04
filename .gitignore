@@ -1,4 +1,5 @@
 main.*
+main-china.*
 !main.tex
 
 dtx-style.sty

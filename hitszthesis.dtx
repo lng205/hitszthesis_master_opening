@@ -2769,32 +2769,34 @@ delim_1 "\\hspace*{\\fill}"
 % 内封，扉页，封面二
 \newcommand{\hitsz@second@titlepage@other}{
   \begin{center}
-    {\songti \xiaosi
-      \begin{tabular}{@{}r@{：}l@{}}
-	\hitsz@natclassifiedindextitle & \hitsz@natclassifiedindex\\
-	\hitsz@internatclassifiedindextitle & \hitsz@intclassifiedindex
-    \end{tabular}}\hfill
-    {\songti \xiaosi
-      \begin{tabular}{@{}r@{：}l@{}}
-	\hitsz@schoolidtitle & \hitsz@schoolid\\
-	\hitsz@secretlevel & \hitsz@statesecrets
-    \end{tabular}}
-  \parbox[t][3.2cm][t]{\textwidth}{\begin{center} \end{center} }
-    \parbox[t][2.4cm][t]{\textwidth}{\xiaoer[1]
-  \begin{center}\songti\bfseries\hitsz@cxuewei\hitsz@cthesisname\end{center}
-      \ifhitsz@fulltime\relax
-      \else%
-        \begin{center}
-          \songti\textbf{\hitsz@cbraceleft\hitsz@cstudenttype\hitsz@cbraceright}
-        \end{center}
-      \fi}
-	\parbox[t][5cm][t]{\textwidth}{\erhao
-  \begin{center}\heiti\hitsz@ctitlecover\end{center}
-  \ifhitsz@subtitle%
-    \begin{center}
-      \hspace{-4em}\xiaoer\heiti\pozhehao\hitsz@csubtitle
-    \end{center}
-  \fi}
+%    {\songti \xiaosi
+%      \begin{tabular}{@{}r@{：}l@{}}
+%	\hitsz@natclassifiedindextitle & \hitsz@natclassifiedindex\\
+%	\hitsz@internatclassifiedindextitle & \hitsz@intclassifiedindex
+%    \end{tabular}}\hfill
+%    {\songti \xiaosi
+%      \begin{tabular}{@{}r@{：}l@{}}
+%	\hitsz@schoolidtitle & \hitsz@schoolid\\
+%	\hitsz@secretlevel & \hitsz@statesecrets
+%    \end{tabular}}
+%  \parbox[t][3.2cm][t]{\textwidth}{\begin{center} \end{center} }
+    \parbox[t][1.8cm][t]{\textwidth}{\xiaoer[1]
+  \begin{center}\kaishu\bfseries 哈尔滨工业大学\end{center}
+%      \ifhitsz@fulltime\relax
+%      \else%
+%        \begin{center}
+%          \songti\textbf{\hitsz@cbraceleft\hitsz@cstudenttype\hitsz@cbraceright}
+%        \end{center}
+%      \fi
+      }
+	\parbox[t][5cm][t]{\textwidth}{\xiaoyi
+  \begin{center}\fangsong\bfseries 硕士学位论文开题报告\end{center}
+%  \ifhitsz@subtitle%
+%    \begin{center}
+%      \hspace{-4em}\xiaoer\heiti\pozhehao\hitsz@csubtitle
+%    \end{center}
+%  \fi
+  }
     \parbox[t][9.8cm][b]{\textwidth}
     {\sihao
       \setlength{\hitsz@title@width}{6em}
@@ -2911,21 +2913,23 @@ delim_1 "\\hspace*{\\fill}"
 % 此处添加提交图书馆电子版的逻辑
 %    \begin{macrocode}
   \begin{titlepage}
-    \hitsz@first@titlepage
-    \ifhitsz@library\clearpage\else\cleardoublepage\fi
     \hitsz@second@titlepage
-    \ifhitsz@library\clearpage\else\cleardoublepage\fi
-    \ifhitsz@bachelor
-    \relax
-    \else
-    \phantomsection
-    \pdfbookmark[0]{\hitsz@etitle}{etitle}
-    \hitsz@engcover
-    \ifhitsz@library\clearpage\else\cleardoublepage\fi
-    \fi
+% \hitsz@first@titlepage
+% \ifhitsz@library\clearpage\else\cleardoublepage\fi
+% \hitsz@second@titlepage
+% \ifhitsz@library\clearpage\else\cleardoublepage\fi
+% \ifhitsz@bachelor
+% \relax
+% \else
+% \phantomsection
+% \pdfbookmark[0]{\hitsz@etitle}{etitle}
+% \hitsz@engcover
+% \ifhitsz@library\clearpage\else\cleardoublepage\fi
+% \fi
   \end{titlepage}
   \normalsize
-  \hitsz@makeabstract}
+%  \hitsz@makeabstract
+  }
 %    \end{macrocode}
 %
 %    生成参考文献和关键字。
