@@ -2768,55 +2768,47 @@ delim_1 "\\hspace*{\\fill}"
 
 % 内封，扉页，封面二
 \newcommand{\hitsz@second@titlepage@other}{
-  \begin{center}
-%    {\songti \xiaosi
-%      \begin{tabular}{@{}r@{：}l@{}}
-%	\hitsz@natclassifiedindextitle & \hitsz@natclassifiedindex\\
-%	\hitsz@internatclassifiedindextitle & \hitsz@intclassifiedindex
-%    \end{tabular}}\hfill
-%    {\songti \xiaosi
-%      \begin{tabular}{@{}r@{：}l@{}}
-%	\hitsz@schoolidtitle & \hitsz@schoolid\\
-%	\hitsz@secretlevel & \hitsz@statesecrets
-%    \end{tabular}}
-%  \parbox[t][3.2cm][t]{\textwidth}{\begin{center} \end{center} }
-    \parbox[t][1.8cm][t]{\textwidth}{\xiaoer[1]
-  \begin{center}\kaishu\bfseries 哈尔滨工业大学\end{center}
-%      \ifhitsz@fulltime\relax
-%      \else%
-%        \begin{center}
-%          \songti\textbf{\hitsz@cbraceleft\hitsz@cstudenttype\hitsz@cbraceright}
-%        \end{center}
-%      \fi
-      }
-	\parbox[t][5cm][t]{\textwidth}{\xiaoyi
-  \begin{center}\fangsong\bfseries 硕士学位论文开题报告\end{center}
-%  \ifhitsz@subtitle%
-%    \begin{center}
-%      \hspace{-4em}\xiaoer\heiti\pozhehao\hitsz@csubtitle
-%    \end{center}
-%  \fi
+  \begin{center}\parbox[t][2.1cm][t]{\textwidth}{
+    \xiaoer[1]
+    \setlength{\hitsz@title@width}{8.4em}
+    \begin{center}
+      \kaishu\bfseries\hitsz@put@title{哈尔滨工业大学}
+    \end{center}
   }
-    \parbox[t][9.8cm][b]{\textwidth}
-    {\sihao
-      \setlength{\hitsz@title@width}{6em}
-      \begin{center} \renewcommand{\arraystretch}{1.62} \songti
-	\begin{tabular}{l@{\hitsz@title@csep}l}
-	  {\heiti \hitsz@put@title{\hitsz@cauthortitle}}	&	\hitsz@cauthor\\
-	  {\heiti \hitsz@put@title{\hitsz@csupervisortitle}}	&	\hitsz@csupervisor\\
-        \ifx\hitsz@cassosupervisor\@empty\else%
-	  {\heiti \hitsz@put@title{\hitsz@cassosupervisortitle}}&	\hitsz@cassosupervisor\\
-        \fi
-        \ifx\hitsz@ccosupervisor\@empty\else%
-	  {\heiti \hitsz@put@title{\hitsz@ccosupervisortitle}}	&	\hitsz@ccosupervisor\\
-        \fi
-	  {\heiti \hitsz@put@title{\hitsz@cdegreetitle}}	&	\hitsz@cdegree\\
-	  {\heiti \hitsz@put@title{\hitsz@csubjecttitle}}	&	\hitsz@csubject\\
-	  {\heiti \hitsz@put@title{\hitsz@caffiltitle}}		&	\hitsz@caffil\\
-	  {\heiti \hitsz@put@title{\hitsz@cdatetitle}}		&	\hitsz@cdatesecond\\
-	  {\heiti \hitsz@put@title{\hitsz@cschoolnametitle}}	&	\hitsz@cschoolname
-	\end{tabular} \renewcommand{\arraystretch}{1}
-    \end{center} }
+  \parbox[t][3.4cm][t]{\textwidth}{
+    \xiaoyi
+    \setlength{\hitsz@title@width}{11.6em}
+    \begin{center}
+      \heiti\hitsz@put@title{硕士学位论文开题报告}
+    \end{center}
+  }
+  \parbox[t]{\textwidth}{
+    \begin{center}
+      \xiaoer\heiti 题\hspace{0.5em}目：\hitsz@ctitlecover
+    \end{center}
+  }
+  \parbox[t][9.4cm][b]{\textwidth}{
+    \sanhao
+    \setlength{\hitsz@title@width}{6em}
+    \begin{center}
+      \renewcommand{\arraystretch}{1.62}
+      \heiti
+      \begin{tabular}{ll}
+        {\hitsz@put@title{院（系）}} & \underline{\makebox[8cm][c]{\hitsz@caffil}}\\
+        {\hitsz@put@title{学科 /专业}} & \underline{\makebox[8cm][c]{\hitsz@csubject}}\\
+        {\hitsz@put@title{\hitsz@csupervisortitle}} & \underline{\makebox[8cm][c]{\hitsz@csupervisor}}\\
+        {\hitsz@put@title{研究生}} & \underline{\makebox[8cm][c]{\hitsz@cauthor}}\\
+        {\hitsz@put@title{学号}} & \underline{\makebox[8cm][c]{\hitsz@cstudentid}}\\
+        {\hitsz@put@title{开题报告日期}} & \underline{\makebox[8cm][c]{\hitsz@cdatesecond}}\\
+      \end{tabular}
+      \renewcommand{\arraystretch}{1}
+    \end{center}
+  }
+  \parbox[t][3.3cm][b]{\textwidth}{
+    \begin{center}
+      \sanhao\heiti 深圳校区教务部\hspace{1em}制
+    \end{center}
+  }
   \end{center}
 }
 % 英文封面
