@@ -2718,51 +2718,47 @@ delim_1 "\\hspace*{\\fill}"
 \newlength{\hitsz@etitlelength}%
 \newcommand{\hitsz@first@titlepage@other}{
   % 封面一
-  \ifthenelse%
-  {\equal{\hitsz@fontset}{siyuan}}%
-  {\xiaosi[1]\vspace*{0.65em}}%
-  {\xiaosi[1]\textcolor[rgb]{1,1,1}{\songti{\hitsz@dummyrow}}}%
-  \vspace*{1.2cm}
-  \begin{center}
+  \begin{center}\parbox[t][2.1cm][t]{\textwidth}{
+    \xiaoer[1]
+    \setlength{\hitsz@title@width}{8.4em}
     \begin{center}
-      \xiaoyi[1]\songti\textbf{\hitsz@cxuewei\hitsz@cthesisname}
+      \kaishu\bfseries\hitsz@put@title{哈尔滨工业大学}
     \end{center}
-    \vspace{1cm}
+  }
+  \parbox[t][3.4cm][t]{\textwidth}{
+    \xiaoyi
+    \setlength{\hitsz@title@width}{11.6em}
     \begin{center}
-      \xiaoer[1]\songti\textbf{（\hitsz@cpostgraduatetype\hitsz@cthesisname）}
+      \heiti\hitsz@put@title{硕士学位论文开题报告}
     \end{center}
-    \ifhitsz@fulltime\vspace{1cm}\else%
-      \begin{center}
-        \xiaoyi[1]\songti
-        \textbf{\hitsz@cbraceleft\hitsz@cstudenttype\hitsz@cbraceright}
-      \end{center}
-    \fi%
-    \parbox[t][7.7cm][t]{\textwidth}{%
-      \begin{center}
-        \erhao\heiti\hitsz@ctitlecover
-      \end{center}
-      \ifhitsz@subtitle%
-        \begin{center}
-          \hspace{-4em}\xiaoer\heiti\pozhehao\hitsz@csubtitle
-        \end{center}
-      \fi
-      \vspace*{0.7cm}
-      \begin{center}%
-        \settowidth{\hitsz@etitlelength}{%
-          \erhao\hitsz@etitle\ifhitsz@subtitle\hitsz@title@esep\hitsz@esubtitle\fi}%
-        \ifdim\hitsz@etitlelength>450mm\xiaoer\else\erhao\fi%
-        \textbf{\MakeUppercase{\hitsz@etitle}%
-          \ifhitsz@subtitle%
-            \hitsz@title@esep\MakeUppercase{\hitsz@esubtitle}
-          \fi}
-      \end{center}}
-      \parbox[t][5cm][t]{\textwidth}{%
-        \begin{center}\xiaoer\songti\textbf{\hitsz@cauthor}\end{center}
-      }
-      \parbox[t][1.4cm][t]{\textwidth}{%
-        \begin{center}\kaishu\xiaoer\textbf{\hitsz@cschoolname}\end{center}
-      }
-      {\songti\xiaoer\textbf{\hitsz@cdate}}
+  }
+  \parbox[t]{\textwidth}{
+    \begin{center}
+      \xiaoer\heiti 题\hspace{0.5em}目：\hitsz@ctitlecover
+    \end{center}
+  }
+  \parbox[t][9.4cm][b]{\textwidth}{
+    \sanhao
+    \setlength{\hitsz@title@width}{6em}
+    \begin{center}
+      \renewcommand{\arraystretch}{1.62}
+      \heiti
+      \begin{tabular}{ll}
+        {\hitsz@put@title{院（系）}} & \underline{\makebox[8cm][c]{\hitsz@caffil}}\\
+        {\hitsz@put@title{学科 /专业}} & \underline{\makebox[8cm][c]{\hitsz@csubject}}\\
+        {\hitsz@put@title{\hitsz@csupervisortitle}} & \underline{\makebox[8cm][c]{\hitsz@csupervisor}}\\
+        {\hitsz@put@title{研究生}} & \underline{\makebox[8cm][c]{\hitsz@cauthor}}\\
+        {\hitsz@put@title{学号}} & \underline{\makebox[8cm][c]{\hitsz@cstudentid}}\\
+        {\hitsz@put@title{开题报告日期}} & \underline{\makebox[8cm][c]{\hitsz@cdatesecond}}\\
+      \end{tabular}
+      \renewcommand{\arraystretch}{1}
+    \end{center}
+  }
+  \parbox[t][3.3cm][b]{\textwidth}{
+    \begin{center}
+      \sanhao\heiti 深圳校区教务部\hspace{1em}制
+    \end{center}
+  }
   \end{center}
 }
 
@@ -2897,15 +2893,14 @@ delim_1 "\\hspace*{\\fill}"
 }
 % 制作封面
 \def\makecover{
-  \phantomsection
-  \pdfbookmark[0]{\hitsz@ctitle}{ctitle}
+  \pdfbookmark[0]{封面}{ctitle}
   \xiaosi[1]%
 %    \end{macrocode}
 %
 % 此处添加提交图书馆电子版的逻辑
 %    \begin{macrocode}
   \begin{titlepage}
-    \hitsz@second@titlepage
+    \hitsz@first@titlepage
 % \hitsz@first@titlepage
 % \ifhitsz@library\clearpage\else\cleardoublepage\fi
 % \hitsz@second@titlepage
@@ -2913,8 +2908,6 @@ delim_1 "\\hspace*{\\fill}"
 % \ifhitsz@bachelor
 % \relax
 % \else
-% \phantomsection
-% \pdfbookmark[0]{\hitsz@etitle}{etitle}
 % \hitsz@engcover
 % \ifhitsz@library\clearpage\else\cleardoublepage\fi
 % \fi
