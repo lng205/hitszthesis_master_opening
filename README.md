@@ -6,6 +6,8 @@
 
 ## 使用方法
 
+- 使用方法与hitszthesis基本一致。请先确保所用环境可以正确编译hitszthesis。
+
 - 本项目只保留Makefile编译。建议在unix环境安装texlive组件，环境需求与hitszthesis相同。
 
 - 使用`make cleanall`清理文件，使用`make thesis`编译文档。
