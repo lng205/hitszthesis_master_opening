@@ -3,3 +3,5 @@ build/
 *.sty
 *.cfg
 *.cls
+*.ist
+*.log

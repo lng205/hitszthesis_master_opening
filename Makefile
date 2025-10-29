@@ -26,12 +26,18 @@ endif
 # Default target
 all: thesis
 
+# Generate class file from .ins if needed
+hitszthesis.cls: hitszthesis.ins hitszthesis.dtx
+	@echo "Generating hitszthesis.cls..."
+	@latex hitszthesis.ins > /dev/null 2>&1
+	@echo "Class file generated successfully"
+
 # Create build directory
 $(BUILDDIR):
 	@$(MKDIR) $(BUILDDIR)
 
 # Copy source files to build directory
-copy-sources: $(BUILDDIR)
+copy-sources: hitszthesis.cls $(BUILDDIR)
 	@echo "Copying source files..."
 	@$(COPY) $(MAIN).tex $(BUILDDIR)/ 2>/dev/null || cp $(MAIN).tex $(BUILDDIR)/
 	@$(COPY) front $(BUILDDIR)/ 2>/dev/null || cp -r front $(BUILDDIR)/ || true
@@ -77,9 +83,11 @@ help:
 	@echo "Available targets:"
 	@echo "  thesis    - Build the thesis (output in build/ directory)"
 	@echo "  pdf       - Build thesis and copy PDF to root directory"
-	@echo "  wc - Count words in the document"
+	@echo "  wc        - Count words in the document"
 	@echo "  clean     - Remove build directory"
 	@echo "  rebuild   - Clean and rebuild everything"
 	@echo "  help      - Show this help message"
+	@echo ""
+	@echo "Note: Class files (.cls, .cfg, .ist) will be auto-generated on first build"
 
 .PHONY: all thesis pdf wc clean rebuild help copy-sources
